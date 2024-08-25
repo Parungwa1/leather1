@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/medium.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/large.cs">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <body>
     <header>
         <img class="logo" src="images/logo.png" alt="logo">
-        <h1>Thank You for visiting Kacthyway services. What would you buy</h1>
+        <h1>Shopping Page for all your leather products</h1>
         <div class="social_media">
             <a href="https://facebook.com"><svg enable-background="new 0 0 32 32" height="15px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g>
@@ -36,11 +36,12 @@
         <nav>
             <button id ="hamburguer">☰</button>
             <ul id="primaryNav">
-              <li class="nav_menu_item"><a href="discover.html" class="nav-link">About us</a></li>
-              <li class="nav_menu_item"><a href="directory.html" class="nav-link">Directory</a></li>
-              <li class="nav_menu_item"><a href="shop.html" class="nav-link">buy</a></li>
-              <li class="nav_menu_item"><a href="index.html" class="nav-link">Home</a></li>
-              <li class="nav_menu_item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav_menu_item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav_menu_item"><a href="discover.html" class="nav-link">About us</a></li>
+                <li class="nav_menu_item"><a href="shop.html" class="nav-link">Shop</a></li>
+                <li class="nav_menu_item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav_menu_item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav_menu_item"><a href="check.html" class="nav-link">Checkout</a></li>
             </ul>
         </nav>
         <div id="banner"></div>
@@ -53,107 +54,96 @@
                 <span class="label">Visited: </span>
                 <span class="visits"></span>
               </p>
-            <!-- <div class="form_container"> -->
-                <h1>📧 Send Us a Message</h1>
-                <!-- <form method="get" action="thanks.html"> -->
-                     <fieldset>
-                        <!-- <label><h2>Your personal details</h2> </label> -->
-                        <!-- <label class="content">First Name* <input type="text" name="fname"placeholder="first name" required></label> -->
-                        <!-- <label class="content">Last Name* <input type="text" name="lname"placeholder="last name" required></label> -->
-                        <!-- <label class="content">Business Position Title* <input type="text" placeholder="business position"minlength="11"required></label> -->
-                        <!-- <label class="content">Email* <input type="email" name="email" placeholder="parungwa@byui.com" placeholder="put company details here"required></label> -->
-                        <!-- <label class="content" for="phone">Phone* <input type="tel" pattern="[+]{1}[0-9]{3}[0-9]{4}[0-9]{3}[0-9]{3}" name="phone" placeholder="+2348066227378 (format)" required></label> -->
-                        <!-- <label class="content">Business Name* <input type="text" name="business" placeholder="type business name here"></label> -->
-                    <!-- </fieldset> -->
-                    <!-- <fieldset> -->
-                        <!-- <label><h2>Select a Membership Level</h2></label> -->
-                       <!--  <label for="checkbox-nested-1">Non Profit Membership
-                            <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-1">
-                          </label>
-                          <label for="checkbox-nested-2">Bronze Membership
-                            <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-2">
-                          </label>
-                          <label for="checkbox-nested-3">Silver Membership
-                            <input type="checkbox" name="checkbox-nested-3" id="checkbox-nested-3">
-                          </label>
-                          <label for="checkbox-nested-4">Gold Membership
-                            <input type="checkbox" name="checkbox-nested-4" id="checkbox-nested-4">
-                          </label> -->
-    
-                        
-                    <!-- </fieldset> -->
-                    <!-- <fieldset> -->
-                        <!-- <h2>Describe Your Business</h2> -->
-                        <!-- <textarea name="area" id="description" rows="8"></textarea> -->
-                    <!-- </fieldset> -->
-                    <!-- <input type="hidden" id="full.datev" name="full-date" value=""> -->
-                    <!-- <input type="submit" value="Send my application" class="submitbtn"> -->
+              <style>
+                .product {
+                    display: inline-block;
+                    margin: 10px;
+                    border: 1px solid #ccc;
+                    padding: 10px;
+                    text-align: center;
+                }
+                .product img {
+                    width: 100px;
+                    height: 100px;
+                }
+                .cart {
+                    margin-top: 20px;
+                }
+                .cart-item {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                }
+                .checkout {
+                    margin-top: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Shopping</h1>
+            <div class="products">
+                <div class="product">
+                    <img src="images/belt.jpg" alt="belt">
+                    <p>Item 1</p>
+                    <button onclick="addToCart('belt', 10)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="images/bag.jpg" alt="bag">
+                    <p>Item 2</p>
+                    <button onclick="addToCart('bag', 20)">Add to Cart</button>
+                </div>
+                <!-- Add more products as needed -->
+            </div>
+        
+            <h2>Cart</h2>
+            <div class="cart" id="cart"></div>
+        
+            <h2>Checkout</h2>
+            <div class="checkout">
+                <form id="checkoutForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="card">Credit Card:</label>
+                    <input type="text" id="card" name="card" required><br><br>
+                    <button type="submit">Pay Now</button>
                 </form>
             </div>
-            <!-- <div class="membershiptype_container"> -->
-                <!-- <h1 class="member">Instructions to apply</h1> -->
-                <!-- <div class="nonprofitmember"> -->
-                    <!-- <h2>Non Profit Membership</h2> -->
-                    <ul>
-                        <!-- <li>Non Profit Membership. This is strictly for nonprofit organizations. It does not attract any payment.</li> -->
-                        <!-- <li>Please be advised that you would be required to show evidence that you are nonprofit organization.</li> -->
-                    </ul>
-                </div>
-
-
-                <!-- <div class="bronzemembership"> -->
-                    <!-- <h2>Bronze Membership</h2> -->
-                    <!-- <ul> -->
-                        <!-- <li> As bronze member, you have a step higher that the former</li> -->
-                        <!-- <li>You would earn a 10% discount on registration and for all services</li> -->
-                        <!-- <li>Access to specialized trainings</li> -->
-                        <!-- <li>Price: N20,000.00 monthly</li> -->
-                    <!-- </ul> -->
-                <!-- </div> -->
-                <!-- <div class="silvermembership"> -->
-                    <!-- <h2>Silver Membership</h2> -->
-                    <!-- <ul> -->
-                        <!-- <li> As silver member, you qaulify for a higher stake in the company business</li> -->
-                        <!-- <li>You would earn a 15% discount on registration and for all services</li> -->
-                        <!-- <li>Access to specialized trainings</li> -->
-                        <!-- <li>Price: N40,000.00 monthly</li> -->
-                    <!-- </ul> -->
-                <!-- </div> -->
-                <!-- <div class="goldmembership"> -->
-                  <!-- <h2>Gold Membership</h2>  -->
-                    <!-- <ul> -->
-                        <!-- <li> As bronze member, you have a step higher that the former</li> -->
-                        <!-- <li>You would earn a 20% discount on registration and for all services</li> -->
-                        <!-- <li>Access to specialized trainings, and involvement in management decisions</li> -->
-                        <!-- <li>Price: N50,000.00 monthly</li> -->
-                    <!-- </ul> -->
-                <!-- </div> -->
-            </div>
-        </main>
+        
+            <script>
+                let cart = [];
+        
+                function addToCart(item, price) {
+                    cart.push({ item, price });
+                    displayCart();
+                }
+        
+                function displayCart() {
+                    const cartDiv = document.getElementById('cart');
+                    cartDiv.innerHTML = '';
+                    cart.forEach((cartItem, index) => {
+                        cartDiv.innerHTML += `
+                            <div class="cart-item">
+                                <span>${cartItem.item} - $${cartItem.price}</span>
+                                <button onclick="removeFromCart(${index})">Remove</button>
+                            </div>
+                        `;
+                    });
+                }
+        
+                function removeFromCart(index) {
+                    cart.splice(index, 1);
+                    displayCart();
+                }
+        
+                document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    alert('Payment Successful!');
+                });
+            </script>
     </body>
-
+    </html>
     <footer>
-        <div class="information">
-            <img class="footer_logo" src="images/logo.png" alt="footer_logo">
-            <h3>Katchyway leatherworks</h3>
-        </div>
-        <div class="contact_info">
-            <p>#5 High Court Road Osisioma Aba</p>
-            <p>parungwa@byui.edu.com ✉</p>
-            <p class="phone">+2348066227378 📞</p>
-            <a class="direction" href="https://goo.gl/maps/M3kLcquLjVM7CDs86"> Our Location 📍</a>
-        </div>
-        <div class="footer_line">
-            <hr>
-            <br>
-            <p>
-                ©
-                <span id="year"></span> 
-                Katchyway leatherworks
-            <p>Katchyway leatherworks | Abia State - Nigeria</p>
-            <p id="updated-now">Last Updated: <span id="lastupdate">11/26/2022 17:34:08</span></p>
-            <div id="lastModified"></div>
-        </div>
+       
     </footer>
     <script src="scripts/mybanner.js"></script>
     <script src="scripts/myscript.js"></script>
